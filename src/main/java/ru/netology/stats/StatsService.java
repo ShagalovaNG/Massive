@@ -16,13 +16,9 @@ public class StatsService {
 
     public long getArifmMean(long[] arithmeticMean) {
 
-        long arrive = 0;
-        for (int k = 0; k < arithmeticMean.length; k++) {
-            arrive += arithmeticMean[k];
-
-        }
+        long arrive = getSum(arithmeticMean);
         long arithmeticMeanSales = (arrive) / arithmeticMean.length;
-        return ((arrive) / arithmeticMean.length);
+        return (arithmeticMeanSales);
     }
 
 
@@ -53,11 +49,7 @@ public class StatsService {
 
     public long getNumberSalesMoreArifmMean(long[] arithmeticMean) {
         int countElementMoreAverage = 0;
-        long arrive = 0;
-        for (int k = 0; k < arithmeticMean.length; k++) {
-            arrive += arithmeticMean[k];
-        }
-        long arithmeticMeanSales = (arrive) / arithmeticMean.length;
+        long arithmeticMeanSales = getArifmMean (arithmeticMean);
         for (long elementMassive : arithmeticMean) {
             if (elementMassive > arithmeticMeanSales)
                 countElementMoreAverage++;
@@ -69,11 +61,7 @@ public class StatsService {
 
     public int getNumberSalesLessArifmMean(long[] arithmeticMean) {
         int countElementMoreAverage = 0;
-        long arrive = 0;
-        for (int k = 0; k < arithmeticMean.length; k++) {
-            arrive += arithmeticMean[k];
-        }
-        long arithmeticMeanSales = (arrive) / arithmeticMean.length;
+        long arithmeticMeanSales = getArifmMean (arithmeticMean);
         for (long elementMassive : arithmeticMean) {
             if (elementMassive <= arithmeticMeanSales)
                 countElementMoreAverage++;
